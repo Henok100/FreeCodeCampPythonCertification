@@ -1,3 +1,10 @@
+"""
+User Configuration Manager
+
+A simple Python application for managing user settings
+such as themes, notifications, and language preferences.
+"""
+
 def add_setting(settings, setting):
     """
     Add a new setting to the settings dictionary.
