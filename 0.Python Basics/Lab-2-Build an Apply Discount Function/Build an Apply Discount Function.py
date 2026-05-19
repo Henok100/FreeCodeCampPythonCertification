@@ -7,17 +7,6 @@ Includes input validation to ensure correct data types and valid ranges.
 
 
 def apply_discount(price, discount):
-    """
-    Apply a percentage discount to a price.
-
-    Args:
-        price (int | float): Original price of the item.
-        discount (int | float): Discount percentage (0–100).
-
-    Returns:
-        float | str: Final price after discount or error message.
-    """
-
     # Validate price type
     if not isinstance(price, (int, float)):
         return "The price should be a number"
