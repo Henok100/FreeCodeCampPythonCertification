@@ -1,104 +1,60 @@
-"""
-Game Character Stats Tracker
+# Player Interface - RPG Movement System
 
-A simple RPG-style character system that manages
-health, mana, and leveling mechanics using properties.
+A Python implementation of an abstract player system using OOP principles, randomness, and movement logic.
 
 This project was completed as part of the freeCodeCamp Python Certification.
-"""
 
+## Features
 
-class GameCharacter:
-    """
-    Represent a game character with health, mana, and level stats.
-    """
+- Abstract base class using `ABC`
+- Random movement system
+- Position tracking
+- Path history logging
+- Extensible player design
+- Inheritance and polymorphism
 
-    def __init__(self, name):
-        """
-        Initialize a new game character.
+## Classes
 
-        Args:
-            name (str): Character name.
-        """
+### Player (Abstract Class)
 
-        self._name = name
-        self.health = 100
-        self.mana = 50
-        self._level = 1
+Defines the base behavior for all game characters:
+- Movement system
+- Position tracking
+- Path history
+- Abstract `level_up()` method
 
-    @property
-    def name(self):
-        """
-        Read-only access to character name.
-        """
-        return self._name
+### Pawn (Concrete Class)
 
-    @property
-    def health(self):
-        """
-        Get current health value.
-        """
-        return self._health
+A playable character that:
+- Moves in 4 directions initially
+- Gains diagonal movement after leveling up
 
-    @health.setter
-    def health(self, value):
-        """
-        Set health value between 0 and 100.
-        """
+## Methods
 
-        if value < 0:
-            self._health = 0
-        elif value > 100:
-            self._health = 100
-        else:
-            self._health = value
+### make_move()
+Randomly selects a move and updates position.
 
-    @property
-    def mana(self):
-        """
-        Get current mana value.
-        """
-        return self._mana
+### level_up()
+Adds new diagonal movement options.
 
-    @mana.setter
-    def mana(self, value):
-        """
-        Set mana value between 0 and 50.
-        """
+## Example Usage
 
-        if value < 0:
-            self._mana = 0
-        elif value > 50:
-            self._mana = 50
-        else:
-            self._mana = value
+```python
+pawn = Pawn()
 
-    @property
-    def level(self):
-        """
-        Get current character level.
-        """
-        return self._level
+pawn.make_move()
+pawn.level_up()
+pawn.make_move()
 
-    def level_up(self):
-        """
-        Increase character level and restore stats.
-        """
+print(pawn.position)
+print(pawn.path)
+```
 
-        self._level += 1
-        self.health = 100
-        self.mana = 50
+## Concepts Used
 
-        print(f"{self.name} leveled up to {self.level}!")
-
-    def __str__(self):
-        """
-        Return formatted character stats.
-        """
-
-        return (
-            f"Name: {self.name}\n"
-            f"Level: {self.level}\n"
-            f"Health: {self.health}\n"
-            f"Mana: {self.mana}"
-        )
+- Abstract classes
+- Inheritance
+- Polymorphism
+- Random module
+- State tracking
+- Game movement logic
