@@ -1,104 +1,68 @@
-"""
-Game Character Stats Tracker
+# Game Character Stats Tracker
 
-A simple RPG-style character system that manages
-health, mana, and leveling mechanics using properties.
+A Python class that models an RPG game character with health, mana, and leveling mechanics.
 
 This project was completed as part of the freeCodeCamp Python Certification.
-"""
 
+## Features
 
-class GameCharacter:
-    """
-    Represent a game character with health, mana, and level stats.
-    """
+- Object-oriented character system
+- Encapsulation using private attributes
+- Property getters and setters
+- Automatic stat validation and capping
+- Character leveling system
+- Custom string representation
 
-    def __init__(self, name):
-        """
-        Initialize a new game character.
+## Class Overview
 
-        Args:
-            name (str): Character name.
-        """
+### `GameCharacter(name)`
 
-        self._name = name
-        self.health = 100
-        self.mana = 50
-        self._level = 1
+Creates a character with:
+- Health = 100
+- Mana = 50
+- Level = 1
 
-    @property
-    def name(self):
-        """
-        Read-only access to character name.
-        """
-        return self._name
+## Properties
 
-    @property
-    def health(self):
-        """
-        Get current health value.
-        """
-        return self._health
+- `name` → read-only character name
+- `health` → capped between 0 and 100
+- `mana` → capped between 0 and 50
+- `level` → current character level
 
-    @health.setter
-    def health(self, value):
-        """
-        Set health value between 0 and 100.
-        """
+## Methods
 
-        if value < 0:
-            self._health = 0
-        elif value > 100:
-            self._health = 100
-        else:
-            self._health = value
+### `level_up()`
+- Increases level by 1
+- Restores health and mana
+- Prints level-up message
 
-    @property
-    def mana(self):
-        """
-        Get current mana value.
-        """
-        return self._mana
+### `__str__()`
+Returns formatted character information.
 
-    @mana.setter
-    def mana(self, value):
-        """
-        Set mana value between 0 and 50.
-        """
+## Example Usage
 
-        if value < 0:
-            self._mana = 0
-        elif value > 50:
-            self._mana = 50
-        else:
-            self._mana = value
+```python
+hero = GameCharacter("Kratos")
 
-    @property
-    def level(self):
-        """
-        Get current character level.
-        """
-        return self._level
+print(hero)
 
-    def level_up(self):
-        """
-        Increase character level and restore stats.
-        """
+hero.level_up()
+```
 
-        self._level += 1
-        self.health = 100
-        self.mana = 50
+## Example Output
 
-        print(f"{self.name} leveled up to {self.level}!")
+```text
+Name: Kratos
+Level: 1
+Health: 100
+Mana: 50
+```
 
-    def __str__(self):
-        """
-        Return formatted character stats.
-        """
+## Concepts Used
 
-        return (
-            f"Name: {self.name}\n"
-            f"Level: {self.level}\n"
-            f"Health: {self.health}\n"
-            f"Mana: {self.mana}"
-        )
+- Classes and objects
+- Encapsulation
+- Properties
+- Getters and setters
+- State management
+- Object-oriented programming
