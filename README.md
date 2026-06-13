@@ -166,8 +166,8 @@ This repository represents a complete foundational journey in computer science a
 
 If you'd like to connect or discuss opportunities:
 
-- GitHub: (add your profile link here)
-- Email: (optional)
+- GitHub: (https://github.com/Henok100/)
+- Email: (henokgashaw15@gmail.com)
 
 ---
 
