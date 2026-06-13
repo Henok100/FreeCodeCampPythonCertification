@@ -1,8 +1,8 @@
-# Classes and Objects (OOP)
+# Classes and Objects
 
 ## 📌 Overview
 
-This topic introduces Object-Oriented Programming (OOP) in Python. It focuses on designing classes, creating objects, and using methods and inheritance to model real-world systems.
+This topic introduces Classes and Objectsin Python. It focuses on designing classes, creating objects, and using methods and inheritance to model real-world systems.
 
 You also apply OOP concepts in both a simple lab and a full certification-level project.
 
